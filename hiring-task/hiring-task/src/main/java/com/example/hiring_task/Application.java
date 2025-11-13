@@ -85,10 +85,10 @@ public class Application implements CommandLineRunner {
             System.out.println(payload.toString(2)); // Pretty-print JSON body
             System.out.println("===================================\n");
 
-            // ResponseEntity<String> webhookResponse = restTemplate.postForEntity(webhookUrl, authRequest, String.class);
+            ResponseEntity<String> webhookResponse = restTemplate.postForEntity(webhookUrl, authRequest, String.class);
 
-            // System.out.println("Webhook submission response: " + webhookResponse.getStatusCode());
-            // System.out.println("Response Body: " + webhookResponse.getBody());
+            System.out.println("Webhook submission response: " + webhookResponse.getStatusCode());
+            System.out.println("Response Body: " + webhookResponse.getBody());
           
  } catch (HttpClientErrorException e) {
         System.err.println("❌ Webhook submission failed: " + e.getStatusCode());
